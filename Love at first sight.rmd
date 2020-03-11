@@ -27,6 +27,34 @@ this assignment.  For each question supply graphical evidence, numerical summari
 
 ### Do people who believe in Love at First sight also tend to believe in Life on other planets?
 
+
+
+Graphic display
+
+```{r}
+barchartGC(~love_first + extra_life,data=mydata, xlab='love @ first sight')
+```
+  
+  people who beleive in L @ 1st Sight, also tend to beleive in ET
+  
+Numerical summary
+
+```{r}
+table1 <- xtabs(~love_first + extra_life, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
+    looks about the same 
+ 
+ Inference
+ 
+ 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+  
   
   
     
@@ -39,3 +67,9 @@ this assignment.  For each question supply graphical evidence, numerical summari
 # Your last Question   
 
 ### Is there a difference between boys and girls with respect to belief in love at First sight?
+
+
+
+
+
+
